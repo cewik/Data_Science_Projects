@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='/style.css') }}">
+    <title>MLD</title>
+</head>
+<body>
+    <h1>Welcome to my MLD Project!</h1>
+    
+        <form method="post">
+       
+        <label for="make_model">Choose the Model :</label>
+        <select id="make_model" name="make_model" style="width: 220px">
+          <!-- <option value="" disabled selected hidden>Choose your model of car</option> -->
+          <option value="Audi A1">Audi A1</option>
+          <option value="Audi A3">Audi A3</option>
+          <option value="Opel Astra">Opel Astra</option>
+          <option value="Opel Corsa">Opel Corsa</option>
+          <option value="Opel Insignia">Opel Insignia</option>
+          <option value="Renault Clio">Renault Clio</option>
+          <option value="Renault Duster">Renault Duster</option>
+          <option value="Renault Espace">Renault Espace</option>
+        </select><br>
+
+        <label for="Gearing_Type">Choose the Gearing Type :</label>
+        <select id="Gearing_Type" name="Gearing_Type" style="width: 220px">
+          <!-- <option value="" disabled selected hidden>Choose Gearing_Type</option> -->
+          <option value="Manual">Manual</option>
+          <option value="Automatic">Automatic</option>
+          <option value="Semi-automatic">Semi-automatic</option>
+        </select><br>
+
+        <label for="age">Choose the age :</label>
+        <select id="age" name="age" style="width: 220px">
+          <!-- <option value="" disabled selected hidden>Choose age</option> -->
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select><br>
+
+        <label for="Gearing_Type">Enter the hp_kW :</label>
+        <input type="number", name="hp_kW", placeholder="hp_kW" style="width: 220px" min="40" max="300" required ><br>
+
+        <label for="Gearing_Type">Enter the km :</label>
+        <input type="number", name="km", placeholder="km" style="width: 220px" min="0" max="400000" required ><br>
+        
+
+        <button type="submit" value="predict" class="btn btn-primary btn-block btn-large"><b> Predict</b></button>
+        </form>
+    
+
+        {%if result%}
+        <p>{{result}}</p>
+
+        {% else %}
+        <p></p>
+        {%endif%}
+
+        <!-- 0   Daily Time Spent on Site  1000 non-null   float64
+        1   Age                       1000 non-null   int64  
+        2   Area Income               1000 non-null   float64
+        3   Daily Internet Usage      1000 non-null   float64
+        4   Ad Topic Line             1000 non-null   object 
+        5   City                      1000 non-null   object 
+        6   Male                      1000 non-null   int64  
+        7   Country                   1000 non-null   object 
+        8   Timestamp 
+
+    Daily Time Spent on Site	Age	Area Income	Daily Internet Usage	Ad Topic Line	City	Male	Country	Timestamp	Clicked on Ad
+    0	68.95	35	61833.90	256.09	Cloned 5thgeneration orchestration	Wrightburgh	0	Tunisia	2016-03-27 00:53:11	0 -->
+
+</body>
+</html>
